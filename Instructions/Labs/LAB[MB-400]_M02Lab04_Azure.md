@@ -508,7 +508,6 @@ Task #2: Get Inspections and Users and Assign Inspections
     -  Add the method below to the class.
     
 ```
-
     private static async Task\<CRMUpdateResult\> RouteInspection(CRMWebAPI api,
     dynamic inspection, string userId, int sequenceNumber)
     
@@ -543,7 +542,7 @@ Task #2: Get Inspections and Users and Assign Inspections
 
    -  Go through the **Inspections** and call the **RouteInspection** method.
    
-	```
+```
 
     int currentUserIndex = 0;
     
@@ -573,7 +572,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     }
     
-	```
+```
 
 11.  We will not assign inspection records to other users in this lab.
     **Comment** out the **if** statement you just added, and we will be
