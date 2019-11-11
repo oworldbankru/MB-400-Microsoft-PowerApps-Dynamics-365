@@ -184,7 +184,7 @@ Task \#3: Add Inspection Gallery
 
     -   Change the Text property of the control to the formula below.
 
-            DateValue(Text(ThisItem.'Scheduled Date'),"en")`
+            DateValue(Text(ThisItem.'Scheduled Date'),"en")
 
 6.  Resize the Gallery
 
@@ -193,19 +193,19 @@ Task \#3: Add Inspection Gallery
     -   Select **Width** property from the formula dropdown and enter the
         formula below.
 
-            Parent.Width`
+            Parent.Width
 
     -   Select **Height** property and set it to the formula below.
 
-            Parent.Height - (MainHeader.Height*2)`
+            Parent.Height - (MainHeader.Height*2)
 
     -   Select the Y property from the dropdown and set it to formula below.
 
-             MainHeader.Height`
+             MainHeader.Height
 
     -   Select the X property from the dropdown and set it to formula below.
 
-            MainHeader.X`
+            MainHeader.X
 
 Task \#4: Add Inspection Details Screen
 ---------------------------------------
@@ -243,19 +243,19 @@ Task \#4: Add Inspection Details Screen
 
     -   Resize the Edit form as:
 
-        1.  Select the **InspectionForm** gallery.
+            1.  Select the **InspectionForm** gallery.
 
-        2.  Select **Width** property from the formula dropdown and enter the
+            2.  Select **Width** property from the formula dropdown and enter the
             formula below.  
             Parent.Width
 
-        3.  Select **Height** property and set it to the formula below.  
+            3.  Select **Height** property and set it to the formula below.  
             Parent.Height - (DetailsHeader.Height\*2)
 
-        4.  Select the Y property from the dropdown and set it to formula below.  
+            4.  Select the Y property from the dropdown and set it to formula below.  
             DetailsHeader.Height
 
-        5.  Select the X property from the dropdown and set it to formula below.  
+            5.  Select the X property from the dropdown and set it to formula below.  
             DetailsHeader.X
 
 2.  Set the **InspectionForm** data source
