@@ -582,8 +582,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     var inspectionResult = new CRMUpdateResult();
     
-    //Your record assignment would like this. We will not assign records to
-    different users in this lab
+    //Your record assignment would like this. We will not assign records to different users in this lab
     
     // if (users.List.Count \> (currentUserIndex))
     
@@ -591,8 +590,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     // dynamic currentUser = users.List[currentUserIndex];
     
-    // inspectionResult = RouteInspection(api, inspection,
-    currentUser.systemuserid.ToString(), sequenceNumber).Result;
+    // inspectionResult = RouteInspection(api, inspection, currentUser.systemuserid.ToString(), sequenceNumber).Result;
     
     // currentUserIndex++;
     
@@ -641,14 +639,14 @@ Task \#1: Publish to Azure
 
 2.  Open the function application settings
 
-   	-  Go back to you **Azure** portal.
+   -  Go back to you **Azure** portal.
 
-    -  Select **All Resources**, search for **InspectionManagement**, and click
+   -  Select **All Resources**, search for **InspectionManagement**, and click
         to open the function you published.
 
-    -  Click **Function Settings**.
+   -  Click **Function Settings**.
 
-    -  Click **Manage Application Settings**.
+   -  Click **Manage Application Settings**.
 
 3.  Update App Settings
 
