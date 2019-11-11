@@ -618,7 +618,9 @@ Task \#1: Publish to Azure
     -  Click **Advanced Edit**.
 
     -  Paste the json below at the top of the settings.
+    
 ```
+
     {
     
     "name": "cdsclientid",
@@ -648,6 +650,7 @@ Task \#1: Publish to Azure
     "slotSetting": false
     
     },
+    
 ```
 
 4.  Go back to **Visual Studio** and open the **local.settings.json** file.
