@@ -274,12 +274,14 @@ Task \#1: Create the Function
     -  Click to open the **local.settings.json** file
 
     -  Add the **Values** below to **local.settings**
-
+    
+```
     "cdsurl": "",
     
     "cdsclientid": "",
     
     "cdsclientsecret": ""
+```
 
 6.  Find the Client Secret you saved in the notepad and paste as the
     cdsclientsecret.
@@ -320,6 +322,7 @@ Task \#1: Create the Function
 
     -  Add the using statements below.
 
+```
     using System.Threading.Tasks;
     
     using Xrm.Tools.WebAPI;
@@ -335,11 +338,13 @@ Task \#1: Create the Function
     using System.Collections.Generic;
     
     using Microsoft.Extensions.Logging;
+```
 
 10.  Create a method that will create the web API.
 
-    - Add the method below inside the class.
-
+  - Add the method below inside the class.
+    
+```
     private static async Task\<CRMWebAPI\> GetCRMWebAPI(ILogger log)
     
     {
@@ -347,10 +352,11 @@ Task \#1: Create the Function
     return null;
     
     }
+```
 
 11.  Add the local variables below before the return line on the **GetCRMWebAPI**
     method.
-
+```
     var clientID = Environment.GetEnvironmentVariable("cdsclientid",
     EnvironmentVariableTarget.Process);
     
@@ -361,19 +367,19 @@ Task \#1: Create the Function
     EnvironmentVariableTarget.Process);
     
     var crmurl = crmBaseUrl + "/api/data/v9.0/";
-
+```
 12.  Create **Authentication Parameters**.
-
+```
     AuthenticationParameters ap = await
     AuthenticationParameters.CreateFromUrlAsync(new Uri(crmurl));
-
+```
 13.  Create **Client Credential** passing your **Client Id** and **Client
     Secret**.
-
+```
     var clientcred = new ClientCredential(clientID, clientSecret);
-
+```
 14.  Get **Authentication Context**.
-
+```
     // CreateFromUrlAsync returns endpoint while AuthenticationContext expects
     authority
     
@@ -382,39 +388,39 @@ Task \#1: Create the Function
     var auth = ap.Authority.Replace("/oauth2/authorize", "");
     
     var authContext = new AuthenticationContext(auth);
-
+```
 15.  Get **Token**.
-
+```
     var authenticationResult = await authContext.AcquireTokenAsync(crmBaseUrl,
     clientcred);
-
+```
 16.  Return the **web API**. Replace the return line with the code below.
-
+```
     return new CRMWebAPI(crmurl, authenticationResult.AccessToken);
-
+```
 17.  Test the web API you created
 
-    -  Call the GetCRMWebAPI method. Add the code below to the Run method.
-
+   -  Call the GetCRMWebAPI method. Add the code below to the Run method.
+```
     CRMWebAPI api = GetCRMWebAPI(log).Result;
-
+```
 18.  Execute **WhoAmI** function and log the **User Id**.
-
+```
     	dynamic whoami = api.ExecuteFunction("WhoAmI").Result;
     
     	log.LogInformation(\$"UserID: {whoami.UserId}");
+```
+19.  Debug.
 
-19.  Debug
+   - Click Run.
 
-    - Click Run.
+   - Go back to **Postman** and click **Send**.
 
-    - Go back to **Postman** and click **Send**.
+   -  Go to the output console.
 
-    -  Go to the output console.
+   -  You should see the **User ID**.
 
-    -  You should see the **User ID**.
-
-    -  Go back **Visual Studio** and stop debugging.
+   -  Go back **Visual Studio** and stop debugging.
 
 Task #2: Get Inspections and Users and Assign Inspections
 ----------------------------------------------------------
@@ -423,7 +429,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     Pending, and scheduled for today
 
     -  Add the method below inside the class.
-
+```
         	private static Task\<CRMGetListResult\<ExpandoObject\>\>
     		GetInspections(CRMWebAPI api)
     
@@ -432,10 +438,10 @@ Task #2: Get Inspections and Users and Assign Inspections
     			return null;
     
     		}
-    
+```    
 2.  Create **Fetch XML**. Add the code below before the return line of the
     GetInspections method.
-
+```
     var fetchxml = @"<fetch version=""1.0"" mapping=""logical"" >
       <entity name=""contoso_inspection"" >
     <attribute name=""contoso_inspectionid"" />
@@ -454,10 +460,10 @@ Task #2: Get Inspections and Users and Assign Inspections
     </filter>
       </entity>
     </fetch>";
-  
+ ``` 
 
 3.  Get the list of Inspections.
-
+```
     var inspections = api.GetList\<ExpandoObject\>("contoso_inspections",
     QueryOptions: new CRMGetListOptions()
     
@@ -466,23 +472,23 @@ Task #2: Get Inspections and Users and Assign Inspections
     		FetchXml = fetchxml
     
     	});
-
+```
 4.  Return the Inspections. Replace the return line with the code below.
-
+```
     return inspections;
-
+```
 5.  Call the GetInspections method from the Run method.
 
     -  Go back to the **Run** method.
 
     -  Call the **GetInspections** method.
-
+```
     var inspections = GetInspections(api).Result;
-
+```
 6.  Create a method that will get all users.
 
     -  Add the method below inside the class.
-
+```
     private static Task\<CRMGetListResult\<ExpandoObject\>\> GetUsers(CRMWebAPI api)
     
     	{
@@ -492,15 +498,15 @@ Task #2: Get Inspections and Users and Assign Inspections
     		return users;
     
     	}
-
+```
 7.  Call the **GetUsers** method from the **Run** method.
-
+```
     	var users = GetUsers(api).Result;
-
+```
 8.  Create a method that will assign inspections to users
 
     -  Add the method below to the class.
-
+```
     private static async Task\<CRMUpdateResult\> RouteInspection(CRMWebAPI api,
     dynamic inspection, string userId, int sequenceNumber)
     
@@ -518,19 +524,19 @@ Task #2: Get Inspections and Users and Assign Inspections
     Guid(inspection.contoso_inspectionid), updateObject);
     
     }
-
+```
 9.  Create two-digit random number.
 
     -  Add the code below to the Run method.
-
+```
     Random rnd = new Random();
     
     int sequenceNumber = rnd.Next(10, 99);
-
+```
 10.  Assign Inspections
 
-    -  Go through the **Inspections** and call the **RouteInspection** method.
-
+   -  Go through the **Inspections** and call the **RouteInspection** method.
+```
     int currentUserIndex = 0;
     
     foreach (dynamic inspection in inspections.List)
@@ -558,6 +564,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     //}
     
     }
+```
 
 11.  We will not assign inspection records to other users in this lab.
     **Comment** out the **if** statement you just added, and we will be
@@ -565,11 +572,12 @@ Task #2: Get Inspections and Users and Assign Inspections
 
 12.  Assign inspections to the Inspection Router. Add the code below inside
     **foreach**.
-
+```
     //We will instead assign inspections to the user you are currently logged in as
     
     inspectionResult = RouteInspection(api, inspection, whoami.UserId.ToString(),
     sequenceNumber).Result;
+```
 
 13. Build the project and make sure that the build succeeds.
 
@@ -610,7 +618,7 @@ Task \#1: Publish to Azure
     -  Click **Advanced Edit**.
 
     -  Paste the json below at the top of the settings.
-
+```
     {
     
     "name": "cdsclientid",
@@ -640,6 +648,7 @@ Task \#1: Publish to Azure
     "slotSetting": false
     
     },
+```
 
 4.  Go back to **Visual Studio** and open the **local.settings.json** file.
 
@@ -661,29 +670,29 @@ Task \#1: Publish to Azure
 
 11.  Prepare test record
 
-    -  Start a new browser window and sign in to <https://make.powerapps.com>
+   -  Start a new browser window and sign in to <https://make.powerapps.com>
 
-    -  Make sure you are in the **Dev** environment.
+   -  Make sure you are in the **Dev** environment.
 
-    -  Select **Apps** and click to open the **Permit Management** application.
+   -  Select **Apps** and click to open the **Permit Management** application.
 
-    -  Click to open one of the **Inspection** records or create a new record.
+   -  Click to open one of the **Inspection** records or create a new record.
 
-    -  Set the **Status Reason** to **New Request** or **Pending**, change the
+   -  Set the **Status Reason** to **New Request** or **Pending**, change the
         **Scheduled Date** to today’s date, and make a note of the current
         **Owner** of the record.
 
-    -  Click **Save**.
+   -  Click **Save**.
 
 12.  Run the function
 
-    -  Go to your **Azure** portal.
+   -  Go to your **Azure** portal.
 
-    -  Expand **Functions** and select **InspectionRouter**.
+   -  Expand **Functions** and select **InspectionRouter**.
 
-    -  Click **Run**.
+   -  Click **Run**.
 
-    -  The function should run and succeed.
+   -  The function should run and succeed.
 
 13. Confirm record assignment
 
