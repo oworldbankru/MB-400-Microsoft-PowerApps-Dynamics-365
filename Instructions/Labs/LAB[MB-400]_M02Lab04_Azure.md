@@ -276,11 +276,11 @@ Task \#1: Create the Function
     -  Add the **Values** below to **local.settings**
     
 ```
-    "cdsurl": "",
+    	"cdsurl": "",
     
-    "cdsclientid": "",
+    	"cdsclientid": "",
     
-    "cdsclientsecret": ""
+    	"cdsclientsecret": ""
 ```
 
 6.  Find the Client Secret you saved in the notepad and paste as the
@@ -323,21 +323,22 @@ Task \#1: Create the Function
     -  Add the using statements below.
 
 ```
-    using System.Threading.Tasks;
+    	using System.Threading.Tasks;
     
-    using Xrm.Tools.WebAPI;
+    	using Xrm.Tools.WebAPI;
     
-    using Microsoft.IdentityModel.Clients.ActiveDirectory;
+   	using Microsoft.IdentityModel.Clients.ActiveDirectory;
     
-    using Xrm.Tools.WebAPI.Results;
+    	using Xrm.Tools.WebAPI.Results;
     
-    using System.Dynamic;
+    	using System.Dynamic;
     
-    using Xrm.Tools.WebAPI.Requests;
+    	using Xrm.Tools.WebAPI.Requests;
     
-    using System.Collections.Generic;
+    	using System.Collections.Generic;
     
-    using Microsoft.Extensions.Logging;
+    	using Microsoft.Extensions.Logging;
+	
 ```
 
 10.  Create a method that will create the web API.
@@ -356,6 +357,7 @@ Task \#1: Create the Function
 
 11.  Add the local variables below before the return line on the **GetCRMWebAPI**
     method.
+    
 ```
     var clientID = Environment.GetEnvironmentVariable("cdsclientid",
     EnvironmentVariableTarget.Process);
@@ -368,17 +370,23 @@ Task \#1: Create the Function
     
     var crmurl = crmBaseUrl + "/api/data/v9.0/";
 ```
+
 12.  Create **Authentication Parameters**.
+
 ```
     AuthenticationParameters ap = await
     AuthenticationParameters.CreateFromUrlAsync(new Uri(crmurl));
 ```
+
 13.  Create **Client Credential** passing your **Client Id** and **Client
-    Secret**.
+ Secret**.
+    
 ```
     var clientcred = new ClientCredential(clientID, clientSecret);
 ```
+
 14.  Get **Authentication Context**.
+
 ```
     // CreateFromUrlAsync returns endpoint while AuthenticationContext expects
     authority
@@ -389,27 +397,35 @@ Task \#1: Create the Function
     
     var authContext = new AuthenticationContext(auth);
 ```
+
 15.  Get **Token**.
+
 ```
-    var authenticationResult = await authContext.AcquireTokenAsync(crmBaseUrl,
-    clientcred);
+    var authenticationResult = await authContext.AcquireTokenAsync(crmBaseUrl, clientcred);
 ```
+
 16.  Return the **web API**. Replace the return line with the code below.
+
 ```
     return new CRMWebAPI(crmurl, authenticationResult.AccessToken);
 ```
+
 17.  Test the web API you created
 
    -  Call the GetCRMWebAPI method. Add the code below to the Run method.
+   
 ```
     CRMWebAPI api = GetCRMWebAPI(log).Result;
 ```
+
 18.  Execute **WhoAmI** function and log the **User Id**.
+
 ```
     	dynamic whoami = api.ExecuteFunction("WhoAmI").Result;
     
     	log.LogInformation(\$"UserID: {whoami.UserId}");
 ```
+
 19.  Debug.
 
    - Click Run.
@@ -429,6 +445,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     Pending, and scheduled for today
 
     -  Add the method below inside the class.
+    
 ```
         	private static Task\<CRMGetListResult\<ExpandoObject\>\>
     		GetInspections(CRMWebAPI api)
@@ -439,8 +456,10 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     		}
 ```    
+
 2.  Create **Fetch XML**. Add the code below before the return line of the
     GetInspections method.
+    
 ```
     var fetchxml = @"<fetch version=""1.0"" mapping=""logical"" >
       <entity name=""contoso_inspection"" >
@@ -463,6 +482,7 @@ Task #2: Get Inspections and Users and Assign Inspections
  ``` 
 
 3.  Get the list of Inspections.
+
 ```
     var inspections = api.GetList\<ExpandoObject\>("contoso_inspections",
     QueryOptions: new CRMGetListOptions()
@@ -473,21 +493,26 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     	});
 ```
+
 4.  Return the Inspections. Replace the return line with the code below.
+
 ```
     return inspections;
 ```
+
 5.  Call the GetInspections method from the Run method.
 
     -  Go back to the **Run** method.
 
     -  Call the **GetInspections** method.
+    
 ```
     var inspections = GetInspections(api).Result;
 ```
 6.  Create a method that will get all users.
 
     -  Add the method below inside the class.
+    
 ```
     private static Task\<CRMGetListResult\<ExpandoObject\>\> GetUsers(CRMWebAPI api)
     
@@ -499,10 +524,13 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     	}
 ```
+
 7.  Call the **GetUsers** method from the **Run** method.
+
 ```
     	var users = GetUsers(api).Result;
 ```
+
 8.  Create a method that will assign inspections to users
 
     -  Add the method below to the class.
@@ -580,6 +608,7 @@ Task #2: Get Inspections and Users and Assign Inspections
 
 12.  Assign inspections to the Inspection Router. Add the code below inside
     **foreach**.
+    
 ```
     //We will instead assign inspections to the user you are currently logged in as
     
