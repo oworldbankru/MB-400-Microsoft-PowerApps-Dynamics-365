@@ -279,7 +279,7 @@ Task \#1: Export the Solution
     -   Select the Command Line task.
 
     -   Paste the script below in the **Script** text area. Replace
-        **user\@myorg.onmicrosoft.com** with your admin username.
+        **user@myorg.onmicrosoft.com** with your admin username.
 
 				echo commit all changes
 				git config user.email "user@myorg.onmicrosoft.com"
@@ -365,24 +365,24 @@ Task \#3: Run Build Pipeline
 
 1.   Open Permit Management DevOps project
 
-    -   Sign in to <https://dev.azure.com/>
+   -   Sign in to <https://dev.azure.com/>
 
-    -   Click to open the **Permit Management** project
+   -   Click to open the **Permit Management** project
 
 2.   Run the build pipeline again
 
-    -   Select **Pipelines**.
+   -   Select **Pipelines**.
 
-    -   Click **Queue**.
+   -   Click **Queue**.
 
-    -   Click **Run** and wait for the run to complete.
+   -   Click **Run** and wait for the run to complete.
 
-    -   The run should succeed again. Select the **Summary** tab.
+   -   The run should succeed again. Select the **Summary** tab.
 
 3.   Check the Repository for the new changes
 
-    -   Select **Repos**.
+   -   Select **Repos**.
 
-    -   Select **Commits**.
+   -   Select **Commits**.
 
-    -   Click to open then topmost commit.
+   -   Click to open then topmost commit.
