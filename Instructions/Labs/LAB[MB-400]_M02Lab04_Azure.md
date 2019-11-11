@@ -512,16 +512,16 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     {
     
-    dynamic updateObject = new ExpandoObject();
+    	dynamic updateObject = new ExpandoObject();
     
-    ((IDictionary\<string, object\>)updateObject).Add
+    	((IDictionary\<string, object\>)updateObject).Add
     
-    ("ownerid\@odata.bind", "/systemusers(" + userId + ")");
+    	("ownerid\@odata.bind", "/systemusers(" + userId + ")");
     
-    updateObject.contoso_sequence = sequenceNumber.ToString();
+   	updateObject.contoso_sequence = sequenceNumber.ToString();
     
-    return await api.Update("contoso_inspections", new
-    Guid(inspection.contoso_inspectionid), updateObject);
+    	return await api.Update("contoso_inspections", new
+    	Guid(inspection.contoso_inspectionid), updateObject);
     
     }
 ```
@@ -536,7 +536,9 @@ Task #2: Get Inspections and Users and Assign Inspections
 10.  Assign Inspections
 
    -  Go through the **Inspections** and call the **RouteInspection** method.
-```
+   
+	```
+
     int currentUserIndex = 0;
     
     foreach (dynamic inspection in inspections.List)
@@ -564,7 +566,8 @@ Task #2: Get Inspections and Users and Assign Inspections
     //}
     
     }
-```
+    
+	```
 
 11.  We will not assign inspection records to other users in this lab.
     **Comment** out the **if** statement you just added, and we will be
@@ -623,31 +626,31 @@ Task \#1: Publish to Azure
 
     {
     
-    "name": "cdsclientid",
+    	"name": "cdsclientid",
     
-    "value": "[clientid]",
+    	"value": "[clientid]",
     
-    "slotSetting": false
-    
-    },
-    
-    {
-    
-    "name": "cdsclientsecret",
-    
-    "value": "[clientsecret]",
-    
-    "slotSetting": false
+    	"slotSetting": false
     
     },
     
     {
     
-    "name": "cdsurl",
+    	"name": "cdsclientsecret",
     
-    "value": "[cdsurl]",
+    	"value": "[clientsecret]",
+    	
+    	"slotSetting": false
     
-    "slotSetting": false
+    },
+    
+    {
+    
+    	"name": "cdsurl",
+    
+    	"value": "[cdsurl]",
+    
+    	"slotSetting": false
     
     },
     
