@@ -835,6 +835,7 @@ API.
     -   Open the **PermitFormFunctions.js** file.
 
     -   Add the function below.
+    
             _lockPermitRequest : function (permitID, reason) {
     
                },
