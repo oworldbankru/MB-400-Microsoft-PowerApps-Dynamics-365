@@ -192,7 +192,7 @@ Task \#1: Create the Custom Connector
 
     -   Click **+ New**.
 
-    -   Select **Others | Custom Connector**.
+    -   Select **Others > Custom Connector**.
 
     -   Change the **Connector Name** from **Untitled** to **CPM Calculator**.
 
@@ -389,47 +389,47 @@ Task \#1: Test on Canvas App
 
 10.  Add navigation button to the Main screen
 
-    -   Select the **MainScreen**.
+   -   Select the **MainScreen**.
 
-    -   Go to the **Insert** tab and click **Button**.
+   -   Go to the **Insert** tab and click **Button**.
 
-    -   Rename the Button **CPMBtn**.
+   -   Rename the Button **CPMBtn**.
 
-    -   Change the **CPMBtn Text** value to **CMP Calculator**.
+   -   Change the **CPMBtn Text** value to **CMP Calculator**.
 
-    -   Place the button on the bottom right of the **MainScreen**.
+   -   Place the button on the bottom right of the **MainScreen**.
 
 11.  Steps to navigate to the CPMCalcScreens
 
-    -   Select the CPMBtn.
+   -   Select the CPMBtn.
 
-    -   Set the OnSelect value of the CPMBtn to the formula below.
+   -   Set the OnSelect value of the CPMBtn to the formula below.
 
 			Set(CalculatedValue, ""); Navigate(CPMCalcScreen, ScreenTransition.None)
 
 12.  Run the Application
 
-    -   Select the **MainScreen** and click **Preview the App**.
+   -   Select the **MainScreen** and click **Preview the App**.
 
-    -   Click on **CMP Calculator** button.
+   -   Click on **CMP Calculator** button.
 
-    -   The CMP Calculator screen should load.
+   -   The CMP Calculator screen should load.
 
-    -   Provide values and click **Submit**. You can notice the loading dots on
-        top of the screen, which confirms that the request has been initiated.
+   -   Provide values and click **Submit**. You can notice the loading dots on
+       top of the screen, which confirms that the request has been initiated.
 
-    -   The **Result Label** should show the calculated result from the Custom
+   -   The **Result Label** should show the calculated result from the Custom
         Connector.
 
-    -   Close the Preview.
+   -   Close the Preview.
 
-    -   Click **File** and **Save**.
+   -   Click **File** and **Save**.
 
-    -   **Publish** the changes to the application.
+   -   **Publish** the changes to the application.
 
-    -   Click **Close**.
+   -   Click **Close**.
 
-    -   Click **Done** on the other window for the solution.
+   -   Click **Done** on the other window for the solution.
 			
 Task \#2: Test on Flow
 ----------------------
