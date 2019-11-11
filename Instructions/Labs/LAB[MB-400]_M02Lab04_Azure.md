@@ -346,11 +346,11 @@ Task \#1: Create the Function
   - Add the method below inside the class.
     
 ```
-    private static async Task\<CRMWebAPI\> GetCRMWebAPI(ILogger log)
+    private static async Task<CRMWebAPI> GetCRMWebAPI(ILogger log)
     
     {
     
-    return null;
+    	return null;
     
     }
 ```
@@ -359,14 +359,11 @@ Task \#1: Create the Function
     method.
     
 ```
-    var clientID = Environment.GetEnvironmentVariable("cdsclientid",
-    EnvironmentVariableTarget.Process);
+    var clientID = Environment.GetEnvironmentVariable("cdsclientid", EnvironmentVariableTarget.Process);
     
-    var clientSecret = Environment.GetEnvironmentVariable("cdsclientsecret",
-    EnvironmentVariableTarget.Process);
+    var clientSecret = Environment.GetEnvironmentVariable("cdsclientsecret", EnvironmentVariableTarget.Process);
     
-    var crmBaseUrl = Environment.GetEnvironmentVariable("cdsurl",
-    EnvironmentVariableTarget.Process);
+    var crmBaseUrl = Environment.GetEnvironmentVariable("cdsurl", EnvironmentVariableTarget.Process);
     
     var crmurl = crmBaseUrl + "/api/data/v9.0/";
 ```
@@ -388,8 +385,7 @@ Task \#1: Create the Function
 14.  Get **Authentication Context**.
 
 ```
-    // CreateFromUrlAsync returns endpoint while AuthenticationContext expects
-    authority
+    // CreateFromUrlAsync returns endpoint while AuthenticationContext expects authority
     
     // workaround is to downgrade adal to v3.19 or to strip the tail
     
@@ -423,7 +419,7 @@ Task \#1: Create the Function
 ```
     	dynamic whoami = api.ExecuteFunction("WhoAmI").Result;
     
-    	log.LogInformation(\$"UserID: {whoami.UserId}");
+    	log.LogInformation($"UserID: {whoami.UserId}");
 ```
 
 19.  Debug.
@@ -447,7 +443,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     -  Add the method below inside the class.
     
 ```
-        	private static Task\<CRMGetListResult\<ExpandoObject\>\>
+        	private static Task<CRMGetListResult<ExpandoObject>>
     		GetInspections(CRMWebAPI api)
     
        		{
@@ -473,10 +469,10 @@ Task #2: Get Inspections and Users and Assign Inspections
       <condition value=""0"" operator=""eq"" attribute=""statecode"" />
       <condition attribute=""contoso_scheduleddate"" operator=""today"" />
       <condition attribute=""statuscode"" operator=""in"" >
-    <value>1</value>
-    <value>463270000</value>
-      </condition>
-    </filter>
+    		<value>1</value>
+    		<value>463270000</value>
+     	 </condition>
+    	</filter>
       </entity>
     </fetch>";
  ``` 
@@ -484,8 +480,7 @@ Task #2: Get Inspections and Users and Assign Inspections
 3.  Get the list of Inspections.
 
 ```
-    var inspections = api.GetList\<ExpandoObject\>("contoso_inspections",
-    QueryOptions: new CRMGetListOptions()
+    var inspections = api.GetList<ExpandoObject>("contoso_inspections", QueryOptions: new CRMGetListOptions()
     
     	{
     
@@ -514,11 +509,11 @@ Task #2: Get Inspections and Users and Assign Inspections
     -  Add the method below inside the class.
     
 ```
-    private static Task\<CRMGetListResult\<ExpandoObject\>\> GetUsers(CRMWebAPI api)
+    private static Task<CRMGetListResult<ExpandoObject>> GetUsers(CRMWebAPI api)
     
     	{
     
-    		var users = api.GetList\<ExpandoObject\>("systemusers");
+    		var users = api.GetList<ExpandoObject>("systemusers");
     
     		return users;
     
@@ -536,14 +531,13 @@ Task #2: Get Inspections and Users and Assign Inspections
     -  Add the method below to the class.
     
 ```
-    private static async Task\<CRMUpdateResult\> RouteInspection(CRMWebAPI api,
-    dynamic inspection, string userId, int sequenceNumber)
+    private static async Task<CRMUpdateResult> RouteInspection(CRMWebAPI api, dynamic inspection, string userId, int sequenceNumber)
     
     {
     
     	dynamic updateObject = new ExpandoObject();
     
-    	((IDictionary\<string, object\>)updateObject).Add
+    	((IDictionary<string, object>)updateObject).Add
     
     	("ownerid\@odata.bind", "/systemusers(" + userId + ")");
     
@@ -578,7 +572,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     {
     
-    log.LogInformation(\$"Routing inspection {inspection.contoso_name}");
+    log.LogInformation($"Routing inspection {inspection.contoso_name}");
     
     var inspectionResult = new CRMUpdateResult();
     
