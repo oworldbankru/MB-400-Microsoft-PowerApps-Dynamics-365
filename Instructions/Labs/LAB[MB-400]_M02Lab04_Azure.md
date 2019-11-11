@@ -506,7 +506,9 @@ Task #2: Get Inspections and Users and Assign Inspections
 8.  Create a method that will assign inspections to users
 
     -  Add the method below to the class.
+    
 ```
+
     private static async Task\<CRMUpdateResult\> RouteInspection(CRMWebAPI api,
     dynamic inspection, string userId, int sequenceNumber)
     
@@ -524,15 +526,19 @@ Task #2: Get Inspections and Users and Assign Inspections
     	Guid(inspection.contoso_inspectionid), updateObject);
     
     }
+    
 ```
+
 9.  Create two-digit random number.
 
     -  Add the code below to the Run method.
+    
 ```
     Random rnd = new Random();
     
     int sequenceNumber = rnd.Next(10, 99);
 ```
+
 10.  Assign Inspections
 
    -  Go through the **Inspections** and call the **RouteInspection** method.
