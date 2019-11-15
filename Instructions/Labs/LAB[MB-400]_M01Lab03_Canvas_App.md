@@ -5,7 +5,7 @@ lab:
 ---
 
 # MB-400: Microsoft PowerApps + Dynamics 365 Developer
-## Module 1, Lab 3 – Data Modeling
+## Module 1, Lab 3 – Canvas App
 
 Scenario
 ========
