@@ -267,7 +267,7 @@ Task \#4: Add Inspection Details Screen
 
                InspectionList.Selected
 
-1.  Edit InspectionForm fields. This adds the data cards for fields by default,
+3.  Edit InspectionForm fields. This adds the data cards for fields by default,
     but you can add/remove the data cards as:
 
     -   Select the **InspectionForm**.
@@ -281,37 +281,35 @@ Task \#4: Add Inspection Details Screen
 
     -   Click **Add**.
 
-    -   The fields should be ordered as shown in the image below. You can
+    -   The fields should be arranged in the following order: Name, Scheduled Date, Status Reason, Comments. You can
         drag/drop to rearrange the fields.
 
-2.  Go to the **Tree View** and expand the **InspectionForm**.
+4.  Go to the **Tree View** and expand the **InspectionForm**.
 
-3.  Select the **Scheduled Date** data card.
+5.  Select the **Scheduled Date** data card.
 
-4.  Go to the **Properties** pane and select the **Advanced** tab.
+6.  Go to the **Properties** pane and select the **Advanced** tab.
 
-5.  Click **Unlock to change Properties**.
+6.  Click **Unlock to change Properties**.
 
-6.  Expand the **Scheduled Date** card.
+7.  Expand the **Scheduled Date** card.
 
-7.  Select **StarVisible**, **ErrorMesage**, **MinuteValue**, **Separator**, and
+8.  Select **StarVisible**, **ErrorMesage**, **MinuteValue**, **Separator**, and
     **HourValue**.
 
-8.  Delete the selected controls. When the controls are deleted, you will be
+9.  Delete the selected controls. When the controls are deleted, you will be
     able to see an error message.
 
-9.  Select the **DateValue** control.
+10.  Select the **DateValue** control.
 
-10. Select the **Scheduled Date** DataCard.
+11. Select the **Scheduled Date** DataCard.
 
-11. Go to formula bar and select **Update**.
+12. Go to formula bar and select **Update**.
 
-12. Remove everything after the **SelectedDate**. This should remove the error
+13. Remove everything after the **SelectedDate**. This should remove the error
     message from the app.
 
-13. Select the **InspectionForm**.
-
-14. Go to the **Properties** pane and click **Edit Fields**.
+14. Select the **InspectionForm**. Then navigate to the **Properties** pane and click **Edit Fields**.
 
 15. Expand the **Name** field.
 
