@@ -81,7 +81,7 @@ Task \#1: Edit Permit Form and View
 8.  Drag the **Permit Type** field to the form and place it below the **Name**
     field.
 
-9.  Add **Build Site** lookup, **Contact** lookup, **Start Date** and **New Size** to the form. The form should now look like the image below.
+9.  Add **Build Site** lookup, **Contact** lookup, **Start Date** and **New Size** to the form.
 
 10. Drag the **Status Reason** field and drop it in the right side of the form
     header. (You may need to minimize the Properties pop-out on the right side of the screen to see the field on the form.)
