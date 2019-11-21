@@ -47,13 +47,13 @@ Things to consider before you begin
 -   Remember to continue working in your DEVELOPMENT environment. We’ll move
     everything to production soon.
 
-Exercise \#1: Create the PCF Control
+Exercise #1: Create the PCF Control
 ====================================
 
 **Objective:** In this exercise, you will create a PowerApps Components
 Framework control using the PowerApps CLI
 
-Task \#1: Install Microsoft PowerApps CLI and Prerequisites
+Task #1: Install Microsoft PowerApps CLI and Prerequisites
 -----------------------------------------------------------
 
 1.  Install Node.js
@@ -77,7 +77,7 @@ Task \#1: Install Microsoft PowerApps CLI and Prerequisites
     
     - Follow the steps in setup wizard to complete installing the **Developer Pack.**
 
-Task \#2: Setup Components Project
+Task #2: Setup Components Project
 ----------------------------------
 
 1.  Start the developer command prompt tool
@@ -91,7 +91,7 @@ Task \#2: Setup Components Project
     -   Run the command mentioned below to change directory. Replace **[Computer
         User Name]** with your OS user name.
 
-    		cd C:\\Users\\[Computer User Name]\\Documents
+    		cd C:\Users\[Computer User Name]\Documents
 
 	-   Run the command mentioned below to create a new folder with name
     **pcfTimelineControl**.
@@ -165,7 +165,7 @@ Task \#2: Setup Components Project
 6.  Open CLI in visual studio code.
 
     -   Click **Terminal** and select **New Terminal**. If Terminal is not
-        visible in the Top menu, you can open it by selecting View -\>
+        visible in the Top menu, you can open it by selecting View ->
         Integrated Terminal.
 
     -   If **cmd** isn’t your **Default Shell** open, click on the arrow and
@@ -238,7 +238,7 @@ Task \#2: Setup Components Project
 -   Add component location to the solution. This creates a reference to include
     your component when the solution build command is run.
 
-    		pac solution  add-reference --path ..\\src
+    		pac solution  add-reference --path ..\src
 
 -   The project reference should be added successfully.
 
@@ -252,14 +252,14 @@ Task \#2: Setup Components Project
 
 -   The build should succeed.
 
-Task \#3: Build the Basic Timeline
+Task #3: Build the Basic Timeline
 ----------------------------------
 
 1.  Change directory to the **src** folder
 
     -  Change directory to the **src** folder.
 
-    		cd ..\\src
+    		cd ..\src
 
 2.  Create **css** folder in the **timelinecontrol** folder and create
     **timelinecontrol.css** file in the **css** folder
@@ -298,7 +298,7 @@ Task \#3: Build the Basic Timeline
 
     -  Add the vis-timeline css inside the resources tag.
 
-    		<css path="..\\node_modules\\vis-timeline\\dist\\vis-timeline-graph2d.min.css" order="1" /\>
+    		<css path="..\node_modules\vis-timeline\dist\vis-timeline-graph2d.min.css" order="1" />
 
 7.  Add timeline element and visual properties to the Index file
 
@@ -306,9 +306,9 @@ Task \#3: Build the Basic Timeline
 
     -  Add the properties below, inside the **export** class timelinecontrol function.
 
-        	private \_timelineElm: HTMLDivElement;
+        	private _timelineElm: HTMLDivElement;
     
-        	private \_timelineVis : any;
+        	private _timelineVis : any;
 
 8.  Add the below constant after the import lines on the top.
 
@@ -388,7 +388,7 @@ Task \#3: Build the Basic Timeline
 
 15.  **Do not** close the test environment.
 
-Task \#4: Tailor for Inspection Data
+Task #4: Tailor for Inspection Data
 ------------------------------------
 
 In this task, you will switch from using the hard-coded array of data to using a
@@ -446,7 +446,7 @@ file loaded into the test harness.
 ```
 
 3.  Add the timeline data array property inside the **export** class
-    timelinecontrol function and below the **\_timelineElm** definition.
+    timelinecontrol function and below the **_timelineElm** definition.
 
 ```
    	 private _timelineData : TimelineData[] = [];
@@ -461,7 +461,7 @@ file loaded into the test harness.
     
             this._timelineData = [];
     
-            	if (gridParam.sortedRecordIds.length \> 0) {
+            	if (gridParam.sortedRecordIds.length > 0) {
     
                 for (let currentRecordId of gridParam.sortedRecordIds) {
     
@@ -547,7 +547,7 @@ file loaded into the test harness.
 
     -  Do not close the test environment.
 
-Task \#5: Change Color for Items
+Task #5: Change Color for Items
 --------------------------------
 
 In this task, you will use the **css** resource you configured to change the
@@ -596,13 +596,13 @@ color of the items on the timeline.
 
     -  Type **y** and **[ENTER].**
 
-Exercise \#2: Publish to CDS
+Exercise #2: Publish to CDS
 ============================
 
 **Objective:** In this exercise, you will publish the timeline control to your
 CDS and add it to the Permit main form.
 
-Task \#1: Setup and Publish
+Task #1: Setup and Publish
 ---------------------------
 
 1.  Get your CDS org URL
@@ -614,7 +614,7 @@ Task \#1: Setup and Publish
 
     -  Click Settings and select Advanced Settings.
 
-    -  Navigate to **Settings \| Customizations**.
+    -  Navigate to **Settings | Customizations**.
 
     -  Click **Developer Resources**.
 
@@ -626,9 +626,9 @@ Task \#1: Setup and Publish
 
     - Make sure you are still in the **src** directory.
 
-    -  Run the command below. Replace **\<orgurl\>** with **URL** you copied.
+    -  Run the command below. Replace **<orgurl>** with **URL** you copied.
 
-			pac auth create --url \<orgurl\>
+			pac auth create --url <orgurl>
 
 1.  Sign in with your **admin** user name.
 
@@ -641,7 +641,7 @@ Task \#1: Setup and Publish
 
    		 pac pcf push --pp contoso
 
-Task \#2: Add Timeline Control to the Permit Form
+Task #2: Add Timeline Control to the Permit Form
 -------------------------------------------------
 
 1.  Open the Permit Management solution.
@@ -713,7 +713,7 @@ Task \#2: Add Timeline Control to the Permit Form
     - The control should show the two inspections, but the color will not
         match the status reason values.
 
-Task \#3: Debug
+Task #3: Debug
 ---------------
 
 1.  Start Edge DevTools and add breakpoint.
@@ -770,7 +770,7 @@ Task \#3: Debug
     -  Select the **Inspections** tab. The timeline control should now show the
         correct colors.
 
-Task \#4: Add the Timeline Control to Permit Management Solution
+Task #4: Add the Timeline Control to Permit Management Solution
 ----------------------------------------------------------------
 
 1.  Add Custom Control to solution
@@ -781,7 +781,7 @@ Task \#4: Add the Timeline Control to Permit Management Solution
     -  Select **Solutions** and click to open the **Permit Management**
         solution.
 
-    -  Click **Add Existing \| Other \| Custom Control**.
+    -  Click **Add Existing | Other | Custom Control**.
 
     -  Search for Timeline, select **contoso_contoso.timelinecontrol** and
         click **Add**.
@@ -789,13 +789,13 @@ Task \#4: Add the Timeline Control to Permit Management Solution
     -  Click **Publish All Customizations** and wait for the publishing to
         complete.
 
-Exercise \#3: Export and Import solution
+Exercise #3: Export and Import solution
 ========================================
 
 **Objective:** In this exercise, you will export the Permit Management solution
 form your Dev environment and import it into your Production environment.
 
-Task \#1: Export Solution
+Task #1: Export Solution
 -------------------------
 
 1.  Export Permit Management managed solution
@@ -828,7 +828,7 @@ Task \#1: Export Solution
 
 	- Save the **Exported** solution on your machine.
 
-Task \#2: Import Solution
+Task #2: Import Solution
 -------------------------
 
 1.  Import Permit Management managed solution
