@@ -70,13 +70,13 @@ Things to consider before you begin
 -   Remember to work in your DEVELOPMENT environment with the customizations.
     Once the customizations are completed, published and tested in “Dev”, the same will be deployed to “Prod”.
 
-<br>Exercise \#1: Create Environments and Solution
+<br>Exercise #1: Create Environments and Solution
 ==================================================
 
 **Objective:** In this exercise, you will create both development and production
 environments.
 
-Task \#1: Create Environments
+Task #1: Create Environments
 -----------------------------
 
 First, we will create the Production Environment.
@@ -160,7 +160,7 @@ Next, we will create the Development Environment.
 
     - Click **Create my Database**.
 
-Task \#2: Create Solution and Publisher
+Task #2: Create Solution and Publisher
 ---------------------------------------
 
 1.  Create Solution
@@ -188,7 +188,7 @@ Task \#2: Create Solution and Publisher
 
     -   Enter **1.0.0.0** for **Version** and click **Create**.
 
-Task \#3: Add Existing Entity
+Task #3: Add Existing Entity
 -----------------------------
 
 1.  Click to open the **Permit Management** solution you just created.
@@ -224,7 +224,7 @@ Task \#3: Add Existing Entity
 
 15. Your solution should now have two entities: Contact and User.
 
-Exercise \#2: Create Entities and Fields
+Exercise #2: Create Entities and Fields
 ========================================
 
 **Objective:** In this exercise, you will create entities and add fields to
@@ -284,7 +284,7 @@ Task #1: Create Permit Entity and Fields
 
     -   Click **Save Entity**.
 
-Task \#2: Create Permit Type Entity and Fields
+Task #2: Create Permit Type Entity and Fields
 ----------------------------------------------
 
 1.  Create Permit Type entity
@@ -320,7 +320,7 @@ Task \#2: Create Permit Type Entity and Fields
 
 4.  Click **Save Entity**.
 
-Task \#3: Create Build Site Entity and Fields
+Task #3: Create Build Site Entity and Fields
 ---------------------------------------------
 
 1.  Create Build Site entity
@@ -390,7 +390,7 @@ Task \#3: Create Build Site Entity and Fields
 
 6.  Click **Save Entity**.
 
-Task \#4: Create Inspection Entity and Fields
+Task #4: Create Inspection Entity and Fields
 ---------------------------------------------
 
 1.  Create Inspection entity
@@ -461,7 +461,7 @@ Task \#4: Create Inspection Entity and Fields
 
 8.  Click **Publish All Customizations.**
 
-Task \#5: Edit Status Reason Options
+Task #5: Edit Status Reason Options
 ------------------------------------
 
 1.  Open the Permit Management solution
@@ -560,7 +560,7 @@ Task \#5: Edit Status Reason Options
 18. Select **Solutions** from the top menu and click **Publish All
     Customizations**.
 
-Exercise \#3: Create Relationships 
+Exercise #3: Create Relationships 
 ===================================
 
 **Objective:** In this exercise, you will create relationships.
