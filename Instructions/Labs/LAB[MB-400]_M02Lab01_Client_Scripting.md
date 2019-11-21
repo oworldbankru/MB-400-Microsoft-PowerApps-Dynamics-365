@@ -743,9 +743,9 @@ API.
 			
 				"entity": {
 				
-					typeName: "mscrm.contoso_permit",
+					"typeName": "mscrm.contoso_permit",
 					
-					structural property: 5
+					"structuralProperty": 5
 					
 					},
 					
@@ -753,7 +753,7 @@ API.
 				
 					"typeName": "Edm.String",
 					
-						"structuralProperty": 1 //Primitive Type 
+					"structuralProperty": 1 //Primitive Type 
 					
 					}
 				},
