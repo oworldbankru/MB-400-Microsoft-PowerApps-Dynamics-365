@@ -51,24 +51,24 @@ Things to consider before you begin
 -   Remember to continue working in your DEVELOPMENT environment. We’ll move
     everything to production soon.
 
-Exercise \#1: Block New Permit Creation Plugin
+Exercise #1: Block New Permit Creation Plugin
 ==============================================
 
 **Objective:** In this exercise, you will create a plugin that will run on
 create permit, this plugin will check if there are any locked permits for the
 selected build site of the new permit and block the creation of the new permit.
 
-Task \#1: Create the plugin
+Task #1: Create the plugin
 ---------------------------
 
 1.  Create a Visual Studio project
 
     - Start **Visual Studio**.
 
-    -  Click **File \> New \> Project**.
+    -  Click **File > New > Project**.
 
     -  Select **Class Library (.NET Framework)** and click **Next**. Make sure
-        you have selected the one with C\#.
+        you have selected the one with C#.
 
     -  Enter **ContosoPackageProject** for **Project Name**, select a location
         to save the project, select **.NET Framework 4.6.2** for **Framework**,
@@ -92,7 +92,7 @@ Task \#1: Create the plugin
     -  Right click on **Class1.cs** and **Delete.** Click **OK** on the warning
         to delete this permanently.
 
-    -  Right on the project and select **Add \> Class**.
+    -  Right on the project and select **Add > Class**.
 
     -  Enter **PreOperationPermitCreate** for **Name** and click **Add**. You
         should now be able to see the class file.
@@ -160,13 +160,13 @@ Task \#1: Create the plugin
 
    -  Create the **FetchXML** string.
 ```
-    string fetchString = "\<fetch output-format='xml-platform' distinct='false'
-    version='1.0' mapping='logical' aggregate='true'\>\<entity
-    name='contoso_permit'\>\<attribute name='contoso_permitid' alias='Count'
-    aggregate='count' /\>\<filter type='and' \>\<condition
+    string fetchString = "<fetch output-format='xml-platform' distinct='false'
+    version='1.0' mapping='logical' aggregate='true'><entity
+    name='contoso_permit'><attribute name='contoso_permitid' alias='Count'
+    aggregate='count' /><filter type='and' ><condition
     attribute='contoso_buildsite' uitype='contoso_buildsite' operator='eq' value='{"
-    + buildSiteRef.Id + "}'/\>\<condition attribute='statuscode' operator='eq'
-    value='463270000'/\>\</filter\>\</entity\>\</fetch\>";
+    + buildSiteRef.Id + "}'/><condition attribute='statuscode' operator='eq'
+    value='463270000'/></filter></entity></fetch>";
 ```
 
 12.  Call RetrieveMultiple and add Trace Message.
@@ -193,7 +193,7 @@ Task \#1: Create the plugin
   ```  
     localcontext.Trace("Locket Permit count : " + lockedPermitCount);
     
-    if (lockedPermitCount \> 0)
+    if (lockedPermitCount > 0)
     
     {
     
@@ -208,7 +208,7 @@ Task \#1: Create the plugin
     that the build is succeeded. If it does not, go back and review your work
     compared the steps documented here.
 
-Task \#2: Deploy the plugin
+Task #2: Deploy the plugin
 ---------------------------
 
 1.  Create strong name key.
@@ -216,7 +216,7 @@ Task \#2: Deploy the plugin
     -  Right click on the **Project** and select **Properties**.
 
     -  Select the **Signing** tab, check the **Sign the assembly** checkbox and
-        select **\<New…\>**.
+        select **<New…>**.
 
     -  Enter **contoso.snk** for **Name**, uncheck the Protect with a
         **Password** checkbox, and click **OK**. Note: In case you get an access
@@ -297,7 +297,7 @@ Task \#2: Deploy the plugin
 
     -  Step should now be registered in the assembly plugin.
 
-Exercise \#2: Create Custom Action Plugin
+Exercise #2: Create Custom Action Plugin
 =========================================
 
 **Objective**: In this exercise, you will create and register a plugin that will
@@ -309,12 +309,12 @@ inspections.
 **Note:** If you did not create the custom action in a prior lab, look in your
 resources folder for how to add it here before you proceed.
 
-Task \#1: Add a new plugin to the project
+Task #1: Add a new plugin to the project
 -----------------------------------------
 
 1.  Add new class to the project and name it **LockPermitCancelInspections**
 
-    -  Right on the project and select **Add \> Class**.
+    -  Right on the project and select **Add > Class**.
 
     -  Enter **LockPermitCancelInspections** for **Name** and click **Add**.
 
@@ -375,7 +375,7 @@ Task \#1: Add a new plugin to the project
     
     localcontext.Trace("Updated Permit Id " + permitEntityRef.Id);
 ```
-Task \#2: Get Related Inspections and Cancel
+Task #2: Get Related Inspections and Cancel
 --------------------------------------------
 
 1.  Create query and condition expressions.
@@ -437,13 +437,13 @@ Task \#2: Get Related Inspections and Cancel
     -  Get the currently selected value of the **Status Reason** option-set.
         Add the code below inside the **foreach** loop.
 ```
-    var currentValue = inspection.GetAttributeValue\<OptionSetValue\>("statuscode");
+    var currentValue = inspection.GetAttributeValue<OptionSetValue>("statuscode");
 ```
 8.  Check if the selected option is **New Request** or **Pending** and increment
     the count. 1 is the value of the New Request option and 463270000 id the
     value of the Pending option. This should be placed inside the foreach loop.
 ```  
-    if (currentValue.Value == 1 \|\| currentValue.Value == 463270000)
+    if (currentValue.Value == 1 || currentValue.Value == 463270000)
     
     {
     
@@ -470,7 +470,7 @@ Task \#2: Get Related Inspections and Cancel
     localcontext.Trace("Canceled inspection Id : " + inspection.Id);
 ```
 
-Task \#3: Set Output Parameter and Create Note Record
+Task #3: Set Output Parameter and Create Note Record
 -----------------------------------------------------
 
 1.  Check if at least one Inspection was canceled and CanceledInspectionsCount
@@ -479,7 +479,7 @@ Task \#3: Set Output Parameter and Create Note Record
     -  Check if at least one **Inspection** was canceled. Add the code below
         after the **foreach** loop.
 ```
-    if (canceledInspectionsCount \> 0)
+    if (canceledInspectionsCount > 0)
     
     {
     
@@ -539,11 +539,11 @@ Task \#3: Set Output Parameter and Create Note Record
 6.  Build plugin by right click on the project and select **Build** and make
     sure the build succeeds.
 
-Task \#4: Deploy Plugin
+Task #4: Deploy Plugin
 -----------------------
 
 1.  If you do not have the plugin registration tool running already, follow
-    instructions in Exercise \#1, Task \#2 to run the tool and connect to the
+    instructions in Exercise #1, Task #2 to run the tool and connect to the
     organization.
 
 2.  Update the assembly
@@ -578,12 +578,12 @@ Task \#4: Deploy Plugin
 
     -  Step should now be registered in the assembly.
 
-Exercise \#3: Test Plugins
+Exercise #3: Test Plugins
 ==========================
 
 **Objective:** In this exercise, you will test the plugins you created
 
-Task \#1: Test Lock Plugin
+Task #1: Test Lock Plugin
 --------------------------
 
 1.  Add Plugin Assembly and SDK Messages to the Permit Management solution
@@ -598,11 +598,11 @@ Task \#1: Test Lock Plugin
     -  Select **Solution** and click to open the **Permit Management**
         solution.
 
-    -  Click **Add Existing \| Other \| Plugin Assembly**.
+    -  Click **Add Existing | Other | Plugin Assembly**.
 
     -  Select **ContosoPackageProject** and click **Add**.
 
-    -  Click **Add Existing \| Other \| SDK Message**.
+    -  Click **Add Existing | Other | SDK Message**.
 
     -  Select both SDK Messages you created and click **Add**.
 
@@ -685,7 +685,7 @@ Task \#1: Test Lock Plugin
 
 8. Close **Advanced Find**.
 
-Task \#2: Test Restrict New Permit Creation Plugin
+Task #2: Test Restrict New Permit Creation Plugin
 --------------------------------------------------
 
 1.  Try to create new Permit record for the One Microsoft Way Build Site
@@ -706,13 +706,13 @@ Task \#2: Test Restrict New Permit Creation Plugin
 
     -  You should have only one Permit record.
 
-Exercise \#4: Plugin Trace Log and Debugging
+Exercise #4: Plugin Trace Log and Debugging
 ============================================
 
 **Objective:** In this exercise, you will check the Plugin Trace log and debug
 the plugins
 
-Task \#1: Plugin Trace Log
+Task #1: Plugin Trace Log
 --------------------------
 
 1.  Open Plugin trace Log.
@@ -733,7 +733,7 @@ Task \#1: Plugin Trace Log
 
 -  Examine your Trace messages.
 
-Task \#2: Debugging Plugins (Optional)
+Task #2: Debugging Plugins (Optional)
 --------------------------------------
 
 Follow these steps to debug your plugins:
