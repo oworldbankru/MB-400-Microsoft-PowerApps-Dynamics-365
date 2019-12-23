@@ -144,7 +144,7 @@ tasks.
     
          },
 
-Task \#3: Load Web Resources 
+Task #3: Load Web Resources 
 -----------------------------
 
 In this task, you will upload the JavaScript files as web resources. Here, you
@@ -261,131 +261,14 @@ specific form events.
 
 9.  **DO NOT** close the solution explorer.
 
-Task \#3: Load Web Resources 
------------------------------
-
-In this task, you will upload the JavaScript files as web resources. Here, you
-will also edit the Permit entity main form and associate the new web resource
-with its form. Finally, you will register your functions to be called on
-specific form events.
-
-1.  Open the Permit Management solution
-
-    -   Sign in to <https://make.powerapps.com/>.
-
-    -   Select your **Dev** environment.
-
-    -   Select **Solutions**.
-
-    -   Click to open the **Permit Management** solution.
-
-2.  Switch to Classic by clicking the … button and click Switch to Classic. This
-    will open the classic UI in a New browser window.  
-    **Note**: Currently, you must switch to the classic solution explorer to
-    complete the hookup of the client script to the form. In the future, this
-    will be moved to make.powerapps.com and will not require switching to the
-    classic tools.
-
-3.  Add web resource to the solution
-
-    -   Select **Web Resources**.
-
-    -   Click **New**.
-
-    -   Enter **PermitFormScripts.js** for **Name**.
-
-    -   Enter **Permit Form Scripts** for **Display Name**.
-
-    -   Select **Script (Jscript)** for **Type**.
-
-    -   Select **English** for **Language**.
-
-    -   Click **Browse**.
-
-    -   Select the **PermitFormFunctions.js** file and click **Open**.
-
-    -   Click **Save** and wait until the changes are saved.
-
-    -   Click **Publish** and wait for the publishing to complete.
-
-    -   Close the web resource editor Window.
-
-4.  Open the Permit main form.
-
-    -   Expand **Entities**.
-
-    -   Expand the **Permit** entity.
-
-    -   Select **Forms**.
-
-    -   Click to open the **Main** form. This will open a New Window.
-
-5.  Add the script to the permit form
-
-    -   Click **Form Properties**.
-
-    -   Click **Add Library.**
-
-    -   Search for **contoso**, select **PermitFormScripts** entry with Display
-        Name as **PermitFormScripts** and click **Add**.
-
-6.  Add OnLoad event handler.
-
-    -   Go to the **Event Handlers** section.
-
-    -   Select **Form** from **Control Dropdown**.
-
-    -   Select **OnLoad** from **Event Dropdown**.
-
-    -   Click **Add**.
-
-    -   Select **Contoso_PermitFormScripts.js** in the dropdown for **Library**.
-
-    -   Enter **ContosoPermit.Scripts.PermitForm.handleOnLoad** in the textbox
-        for **Function**.
-
-    -   Check the **Pass Execution Context** checkbox.
-
-    -   Click **OK**.
-
-7.  Add Permit Type OnChange event handler.
-
-    -   Go to the **Event Handlers** section.
-
-    -   Select **Permit Type** from the dropdown for **Control**.
-
-    -   Select **OnChange** from the dropdown for **Event**.
-
-    -   Click **Add**.
-
-    -   Select **Contoso_PermitFormScripts.js** for **Library**.
-
-    -   Enter **ContosoPermit.Scripts.PermitForm.handleOnChangePermitType** in
-        the textbox for **Function**.
-
-    -   Check the **Pass Execution Context** checkbox.
-
-    -   Click **OK**.
-
-8.  Save and publish your changes
-
-    -   Click **OK** to close the **Form Properties** window.
-
-    -   Click **Save and Close**.
-
-    -   Click **Publish All Customizations** and wait for the publishing to
-        complete.
-
-9.  **DO NOT** close the solution explorer.
-
-Exercise \#2: Show Hide Tabs
+Exercise #2: Show Hide Tabs
 ============================
 
 **Objective:** In this exercise, you will create a script that will show/hide
 the inspections tab based on the permit type entity’s “required inspections”
 field value.
 
-Task \#1: Create Function 
+Task #1: Create Function 
 --------------------------
 
 1.  Create a function that will run when the Permit form loads and when the
@@ -514,7 +397,7 @@ Task \#1: Create Function
 4.  **DO NOT** close this window. You will need to come back to this window in
     the next exercise.
     
-Task \#4: Test Your Changes 
+Task #4: Test Your Changes 
 ----------------------------
 
 1.  Start the Permit Management application
@@ -616,7 +499,7 @@ Task #1: Create Function
             Xrm.Page.getAttribute("contoso_newsize").setRequiredLevel("none");
             Xrm.Page.ui.controls.get("contoso_newsize").setVisible(false);
 
-6.  The \_handlePermitTypeSettings function should now look like the image
+6.  The _handlePermitTypeSettings function should now look like the image
     below.
 
 7.  Click **File** and **Save All**.
@@ -690,7 +573,7 @@ Task #3: Test Your Changes
 7.  Check if both the **Inspections** tab and **New Size** field are now hidden.
     They should be removed as soon as the “Permit Type” is removed.
 
-Exercise \#4: Command Button Function
+Exercise #4: Command Button Function
 =====================================
 
 **Objective:** In this exercise, you will download and install the Ribbon
@@ -698,7 +581,7 @@ Workbench tool to edit the command bar. Through this, you will also create
 action, create function that will lock permits, add a button to the permit
 entity and call the lock permit function when the button is clicked.
 
-Task \#1: Download and Install Ribbon Workbench
+Task #1: Download and Install Ribbon Workbench
 -----------------------------------------------
 
 Ribbon workbench is a community tool that makes it easier to edit the command
@@ -753,7 +636,7 @@ editing the RibbonDiffXml.
 
     -   Click **Settings** and select **Advanced Settings**.
 
-    -   Click **Settings \| Solutions**.
+    -   Click **Settings | Solutions**.
 
     -   You should see the Ribbon Workbench button on the top.
 
@@ -761,7 +644,7 @@ editing the RibbonDiffXml.
 
 6.  Close the Permit Management application.
 
-Task \#2: Create Action Process
+Task #2: Create Action Process
 -------------------------------
 
 In this task, you will create a custom action that will be called to lock the
@@ -815,7 +698,7 @@ registers on the custom actions you will define here.
 
     -   Close the solution explorer.
 
-Task \#3: Create the Function
+Task #3: Create the Function
 -----------------------------
 
 In this task, you will create the logic to invoke a custom action using the web
@@ -842,7 +725,7 @@ API.
     
 3.  Build entity and set reason.
 
-    -   Add the script mentioned below inside the **\_lockPermitRequest**
+    -   Add the script mentioned below inside the **_lockPermitRequest**
         function.
 
             this.entity = { entityType: "contoso_permit", id: permitID };
@@ -860,9 +743,9 @@ API.
 			
 				"entity": {
 				
-					typeName: "mscrm.contoso_permit",
+					"typeName": "mscrm.contoso_permit",
 					
-					structural property: 5
+					"structuralProperty": 5
 					
 					},
 					
@@ -870,7 +753,7 @@ API.
 				
 					"typeName": "Edm.String",
 					
-						"structuralProperty": 1 //Primitive Type 
+					"structuralProperty": 1 //Primitive Type 
 					
 					}
 				},
@@ -882,7 +765,7 @@ API.
 		
 		};
 
-5.   Add the function mentioned below after the **\_lockPermitRequest**
+5.   Add the function mentioned below after the **_lockPermitRequest**
         function.
 
     		lockPermit: function () {
@@ -894,7 +777,7 @@ API.
 
 			var PermitID = Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
 
-7.   Call **\_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
+7.   Call **_lockPermitRequest**. We are hardcoding the reason “Admin Lock”
     
    	 			var lockPermitRequest = new
     				ContosoPermit.Scripts.PermitForm._lockPermitRequest(PermitID, "Admin Lock");
@@ -953,7 +836,7 @@ API.
 
  -   Click **Done**.
 
-Task \#4: Add Button to Ribbon
+Task #4: Add Button to Ribbon
 ------------------------------
 
 1.  Open Ribbon workbench
@@ -965,7 +848,7 @@ Task \#4: Add Button to Ribbon
 
     -   Click **Settings** and select **Advanced Settings**.
 
-    -   Click **Settings \| Solutions**.
+    -   Click **Settings | Solutions**.
 
     -   Click on the Ribbon Workbench button.
 
@@ -1017,7 +900,7 @@ Task \#4: Add Button to Ribbon
 7.  Click **OK** and wait for the publishing to complete. This might take 3-7
     minutes to complete.
 
-Task \#5: Test Command Button
+Task #5: Test Command Button
 -----------------------------
 
 1.  Start the Permit Management application.

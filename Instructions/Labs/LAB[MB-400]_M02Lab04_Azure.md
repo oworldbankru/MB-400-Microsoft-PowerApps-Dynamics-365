@@ -91,7 +91,7 @@ Task #1: Register Azure AD Application
     -  Copy the **Value** and save it on a notepad. You need this value in
         future tasks.
 
-Task \#2: Create Application User and Security Role
+Task #2: Create Application User and Security Role
 ---------------------------------------------------
 
 In this task, you will create the application user and associate it with the
@@ -165,7 +165,7 @@ the privilege/ permissions needed to run the routing logic.
 
     -  Select **Azure Active Directory**.
 
-    -  Select **App Registrations \| Owned applications**
+    -  Select **App Registrations | Owned applications**
 
     -  Click to open the registration you created.
 
@@ -187,13 +187,13 @@ the privilege/ permissions needed to run the routing logic.
 
     -  Select **Inspection Router** and click **OK**.
 
-Exercise \#2: Create Azure Function for Inspection Routing
+Exercise #2: Create Azure Function for Inspection Routing
 ==========================================================
 
 **Objective:** In this exercise, you will create the Azure function that will
 route the inspections
 
-Task \#1: Create the Function
+Task #1: Create the Function
 -----------------------------
 
 1.  Create Azure Function project
@@ -208,7 +208,7 @@ Task \#1: Create the Function
 
     -  Select **Azure Function V2 (.NET Core)** and select **Timer Trigger**.
 
-    -  Change the Schedule to **0 0 0 \* \* \*** (Midnight Every Day) and click
+    -  Change the Schedule to **0 0 0 * * *** (Midnight Every Day) and click
         **Create**.
 
 2.  Rename and run the Function
@@ -466,7 +466,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     <attribute name=""contoso_sequence"" />
     <attribute name=""contoso_scheduleddate"" />
     <filter type=""and"" >
-      <condition value=""0"" operator=""eq"" attribute=""statecode"" />
+      <condition attribute=""statecode"" operator=""eq"" value=""0"" />
       <condition attribute=""contoso_scheduleddate"" operator=""today"" />
       <condition attribute=""statuscode"" operator=""in"" >
     		<value>1</value>
@@ -539,7 +539,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     	((IDictionary<string, object>)updateObject).Add
     
-    	("ownerid\@odata.bind", "/systemusers(" + userId + ")");
+    	("ownerid@odata.bind", "/systemusers(" + userId + ")");
     
    	updateObject.contoso_sequence = sequenceNumber.ToString();
     
@@ -578,7 +578,7 @@ Task #2: Get Inspections and Users and Assign Inspections
     
     //Your record assignment would like this. We will not assign records to different users in this lab
     
-    // if (users.List.Count \> (currentUserIndex))
+    // if (users.List.Count > (currentUserIndex))
     
     //{
     
@@ -610,13 +610,13 @@ Task #2: Get Inspections and Users and Assign Inspections
 
 13. Build the project and make sure that the build succeeds.
 
-Exercise \#3: Publish and Test
+Exercise #3: Publish and Test
 ==============================
 
 **Objective:** In this exercise, you will publish the Azure function to Azure,
 update the app settings, and test the function.
 
-Task \#1: Publish to Azure
+Task #1: Publish to Azure
 --------------------------
 
 1.  Publish the function
@@ -734,14 +734,14 @@ Task \#1: Publish to Azure
 
     -  The record **Owner** should now be the **Inspection Router**.
 
-Exercise \#4: Export and Import solution
+Exercise #4: Export and Import solution
 ========================================
 
 **Objective:** In this exercise, you will export the Permit Management solution
 form your Dev environment and import it into your Production environment. In
 this lab, you have added a security role to the solution that must be promoted.
 
-Task \#1: Export Solution
+Task #1: Export Solution
 -------------------------
 
 1.  Export Permit Management managed solution
@@ -773,7 +773,7 @@ Task \#1: Export Solution
 
 4. Save the **Exported** solution in your machine.
 
-Task \#2: Import Solution
+Task #2: Import Solution
 -------------------------
 
 1.  Import Permit Management managed solution
