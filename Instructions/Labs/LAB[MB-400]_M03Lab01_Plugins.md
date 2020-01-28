@@ -1,11 +1,11 @@
 ---
 lab:
-    title: 'Lab 03: Plug-ins'
-    module: 'Module 02: Extending the Power Platform Common Data Service'
+    title: 'Lab 01: Plug-ins'
+    module: 'Module 03: Extending the Power Platform Common Data Service'
 ---
 
 # MB-400: Microsoft PowerApps + Dynamics 365 Developer
-## Module 2, Lab 3 - Plug-ins
+## Module 3, Lab 1 - Plug-ins
 
 Scenario
 ========
