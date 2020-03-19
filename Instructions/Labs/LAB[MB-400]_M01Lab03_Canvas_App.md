@@ -85,7 +85,7 @@ Task \#1: Create Canvas App
 
     -   Click File and select Save As.
 
-    -   Check if **The Cloud** is selected. Enter **Inspector** for Name and
+    -   Ensure that **The Cloud** is selected. Enter **Inspector** for Name and
         click **Save**. This will make sure that the changes are not removed if
         the app closes unexpectedly.
 
@@ -93,7 +93,7 @@ Task \#1: Create Canvas App
 
     -   Select **App Settings** and then select **Advanced Settings**.
 
-    -   Scroll down and turn on **Components**.
+    -   Scroll down and ensure that the toggle box **Components** is turned **On.**
 
     -   Click on the app designer back button.
 
@@ -125,18 +125,17 @@ Task \#1: Create Canvas App
 
     -   Click **Custom** and select **Header**.
 
-    -   Rename **Header_1** to **MainHeader** by double click on Header_1.
+    -   Rename **Header_1** to **MainHeader** by double clicking on Header_1 in the Component pane on the right.
 
 7.  Change the MainHeader properties
 
     -   Select **MainHeader**.
 
-    -   Change the **Text** attribute of the **MainHeader** to **My Pending
-        Inspections**. This can be done by selecting “Text” property in the
+    -   Change the **Text** attribute of the **MainHeader** to **My Pending Inspections**. This can be done by selecting “Text” property in the
         dropdown below top menu. Make sure that you have selected the MainHeader
         control while doing this step.
 
-    -   Change the **Width** vale of the **MainHeader** to the formula below.
+    -   Change the **Width** vale of the **MainHeader** to the formula below. (You may need to click into the Formula tab at the top of the screen.)
 
                Parent.Width
 
@@ -151,36 +150,36 @@ Task \#3: Add Inspection Gallery
 
     -   Go to the **Insert** tab.
 
-    -   Click **Gallery** and select **Vertical**.
+    -   Click **Vertical Gallery.**
 
     -   Select **Inspections** for **Data Source**. When Inspection is selected,
         this will automatically pick the fields and show them in the gallery
         items.
 
-    -   Rename **Gallery_1** to **InspectionList** by double click on Gallery_1.
+    -   Rename **Gallery_1** to **InspectionList** by double clicking on Gallery_1 in the Gallery pane on the right.
 
 2.  Select the inspector view
 
     -   Make sure you have the **InspectionList** control selected.
 
-    -   Go to the **Properties** pan and select **Inspector View** for **View**.
+    -   Go to the **Properties** pane and select **Inspector View** for **View**.
 
 3.  Change the **InspectionList** control layout
 
     -   Go to the **Properties** pane and click on the **Layout** dropdown.
 
-    -   Select **Title and Subtitle**.
+    -   Select **Title and Subtitle** if it is not already selected.
 
 4.  Verify the selected fields.
 
     -   Go to the **Properties** pane and click on the **Edit Fields**.
 
-    -   Confirm that Scheduled Date is selected for Subtitle1 and Name is
-        selected for Tile1. Close the Data pane.
+    -   Confirm that Scheduled Date is selected for Subtitle and Inspection is
+        selected for Title. Close the Data pane.
 
 5.  Change date time to date only.
 
-    -   Expand the **InspectionList** and select **Subtitle1**.
+    -   Select the **Subtitle**.
 
     -   Change the Text property of the control to the formula below.
 
