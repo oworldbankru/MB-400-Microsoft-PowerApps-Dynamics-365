@@ -209,7 +209,7 @@ Task \#3: Add Inspection Gallery
 Task \#4: Add Inspection Details Screen
 ---------------------------------------
 
-1.  Click **New Screen** and select **Blank**.
+1.  Click **New Screen** from the top left menu and select **Blank**.
 
 2.  Rename the new screen **DetailsScreen** by double click on the control in
     Tree View.
@@ -220,15 +220,15 @@ Task \#4: Add Inspection Details Screen
 
     -   Go to the **DetailsScreen** and paste the **Header**.
 
-    -   Rename the Header you **DetailsHeader** by double click on the control
+    -   Rename the Header **DetailsHeader** by double clicking on the control
         in Tree View.
 
-    -   Select te **Y** property of the **DetailsHeader** and set to **0**.
+    -   Select the **Y** property of the **DetailsHeader** and set to **0**.
 
     -   Select the **Text** property of the **DetailsHeader** and set it to
         formula below.
 
-               InspectionList.Selected.Name
+               InspectionList.Selected.'Inspection (contoso_inspection)'
 
 1.  Add Form to the DetailsScreen.
 
@@ -236,13 +236,13 @@ Task \#4: Add Inspection Details Screen
 
     -   Select the **Insert** tab.
 
-    -   Click **Forms** and select **Edit**.
+    -   Click **Edit Forms.**
 
     -   Rename the form **InspectionForm**.
 
     -   Resize the Edit form as:
 
-            1.  Select the **InspectionForm** gallery.
+            1.  Select the **InspectionForm**.
 
             2.  Select **Width** property from the formula dropdown and enter the
             formula below.  
@@ -262,7 +262,7 @@ Task \#4: Add Inspection Details Screen
     -   Select the **InspectionForm** and select the DataSource as
         **Inspections** entity.
 
-    -   Set the Item value to the formula below.
+    -   Click the **Advanced** tab and scroll down to **Item.** Set the Item value to the formula below.
 
                InspectionList.Selected
 
@@ -275,7 +275,7 @@ Task \#4: Add Inspection Details Screen
 
     -   Click **Add Field**.
 
-    -   Select **Name**, **Scheduled Date**, **Status Reason**, and
+    -   Select **Inspection**, **Scheduled Date**, **Status Reason**, and
         **Comments**.
 
     -   Click **Add**.
@@ -291,10 +291,10 @@ Task \#4: Add Inspection Details Screen
 
 6.  Click **Unlock to change Properties**.
 
-7.  Expand the **Scheduled Date** card.
+7.  Return to Tree View on the left. Expand the **Scheduled Date** card.
 
 8.  Select **StarVisible**, **ErrorMesage**, **MinuteValue**, **Separator**, and
-    **HourValue**.
+    **HourValue**. (To select all at once, you can hold the Shift key.)
 
 9.  Delete the selected controls. When the controls are deleted, you will be
     able to see an error message.
@@ -363,7 +363,7 @@ Task \#5: Submit the Inspection Result
 1.  Add submit button to the details screen.
 
     -   Select the **DetailsScreen**. Make sure that you have not selected the
-        Edit Form.
+        Form.
 
     -   Go to the **Insert** tab and click **Button**.
 
@@ -417,8 +417,6 @@ Task \#6: Test Application
 
     -   Click **Publish this Version**.
 
-    -   Click **Close**.
-
     -   Close the **Designer** browser window or tab.
 
     -   Click **Leave** if prompted when tried to close the browser window.
@@ -459,9 +457,9 @@ Task \#1: Export solution.
     checker and you will have to refresh the PowerApps page after the
     installation is complete. You should be able to see **Run** option now.
 
-6.  Click on Run and wait for the run to complete.
+6.  Click on Run and wait for the run to complete. You can see the status of the Solution Checker in the upper right corner.
 
-7.  Click on the More **Commands** of the **Permit Management** solution.
+7.  Click on the **... (More Commands)** of the **Permit Management** solution.
 
 8.  Click Solution Checker and select View Results.
 
@@ -522,7 +520,7 @@ Task \#1: Export solution.
 
 34. Select **Managed** and click **Export**.
 
-35. Click **Save** and select **Save as**.
+35. The file will download.
 
 36. Save the solution on your machine.
 
@@ -555,4 +553,4 @@ Task \#2: Import solution.
 8.  Wait for import to complete and click **Close**.
 
 9.  Navigate to both the model driven and canvas apps you’ve created and add a
-    few records, test the apps.
+    few records to test the apps.
