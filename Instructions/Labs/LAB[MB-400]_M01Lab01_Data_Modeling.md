@@ -89,47 +89,13 @@ environments.
 Task #1: Create Environments
 -----------------------------
 
-First, we will create the Production Environment.
+First, we will view the available environments.
 
-1.  Sign in to <https://aka.ms/ppac>
+1.  Sign in to <https://admin.powerplatform.microsoft.com> with your provided credentials.
 
-2.  Select **Environments** and click **New** from the top menu. This will open
-    a menu on the right-hand side of the window.
+2.  Select **Environments**. You should see two environments: A Default environment and a Production environment.
 
-3.  Enter **[Your Last Name] Prod** for **Name**.
-
-4.  Select **Production** in the dropdown for **Type.**
-
-5.  Select your **Region**
-
-6.  Enter the **Purpose** for creating this environment (Optional). Now, either
-    follow (g) or (h) to configure the environment.
-
-7.  Turn on the **toggle** to **create a database for this environment** if you
-    wish to create the database along with this, otherwise this can be done once
-    the environment is configured.
-
-8.  Click **Next.**
-
-9.  Select **Language** and **Currency**. For the purposes of these labs, the
-    environments have **English** and **US dollars** (USD) selected.
-
-10. Leave the **Enable Dynamics 365 apps** disabled for the purpose of these
-    labs.
-
-11. Leave the **Deploy Sample apps and data** disabled for the purpose of these
-    labs.
-
-12. Click **Save**.
-
-13. Your environment may take a few minutes to provision. You can click the **Refresh** button to refresh the subgrid. When the environment is provisioned, the **State** will change to Ready.
-
-14. If you did not previously create your database, select your environment and click **Create my database**. Otherwise, skip this step.
-
-    - Select **Currency** and **Language**. For the purposes of these labs, the
-    environments have **US dollars** (USD) and **English** selected.
-
-    - Click **Create my Database**.
+3. Open the **Production** environment and review the settings.
 
 Next, we will create the Development Environment.
 
@@ -138,7 +104,7 @@ Next, we will create the Development Environment.
 
 2.  Enter **[Your Last Name] Dev** for **Name**.
 
-3.  Select **Production** in the dropdown for **Type**.
+3.  Select **Trial** in the dropdown for **Type**.
 
 4.  Select your **Region**.
 
@@ -168,7 +134,7 @@ Next, we will create the Development Environment.
     - Select **Currency** and **Language**. For the purposes of these labs, the
     environments have **US dollars** (USD) and **English** selected.
 
-    - Click **Create my Database**.
+    - Click **Create my Database**. Your database may take a few minutes to provision. 
 
 Task #2: Create Solution and Publisher
 ---------------------------------------
@@ -185,7 +151,7 @@ Task #2: Create Solution and Publisher
 
 2.  Create Publisher
 
-    -   Click on the **Publisher** dropdown and select **+ Publisher**.
+    -   Click on the **Publisher** dropdown and select **+ Publisher**. A new window will open. (Ensure your pop-up blocker is disabled if the window does not open.)
 
     -   Enter **Contoso** for **Display Name** and **contoso** for **Prefix**
 
@@ -230,7 +196,7 @@ Task #3: Add Existing Entity
 
 13. Click **Next**.
 
-14. **DO NOT** select any components. Click **Add**.
+14. Do not select any components. Click **Add**.
 
 15. Your solution should now have two entities: Contact and User.
 
@@ -244,13 +210,13 @@ these entities and edit the **Status Reason** options for the **Permit** and
 Task #1: Create Permit Entity and Fields
 -----------------------------------------
 
-1.  Continuing in your development environment, open the Permit Management
+1.  Continuing in your Dev environment, open the Permit Management
     solution
 
-    -   Sign in to <https://make.powerapps.com> (if you are not already signed in)
+    -   Sign in to <https://make.powerapps.com> (if you are not already signed in).
 
     -   Select **Solutions** and click to open the **Permit Management**
-        solution you just created (if you are not already in this Solution)
+        solution you just created (if you are not already in this Solution).
 
 2.  Create Permit entity
 
@@ -466,7 +432,7 @@ Task #4: Create Inspection Entity and Fields
 
 6.  Click **Save Entity**.
 
-7.  Select **Solutions** on the top and this action will take you back to the
+7.  Select **Solutions**. This action will take you back to the
     Solutions page.
 
 8.  Click **Publish All Customizations.**
@@ -489,7 +455,7 @@ Task #5: Edit Status Reason Options
 
     -   Expand the **Inspection** entity and select **Fields**.
 
-    -   Locate and double click to open the **statuscode** field.
+    -   Locate and double click to open the **statuscode** (Display Name will be **Status Reason**) field.
 
 3.  Change the Active option label
 
@@ -525,7 +491,7 @@ Task #5: Edit Status Reason Options
 
 8.  Your option-set should now have 5 options for the **Active** state.
 
-9.  Select Pending as the Default Value and click **Save and Close**. from the
+9.  Select Pending as the Default Value and click **Save and Close** from the
     top menu.
 
 10. Edit Permit entity Status Reason options
@@ -553,6 +519,7 @@ Task #5: Edit Status Reason Options
     -   Click **Add**.
 
     -   Enter **Cancelled** for Label and click **OK**.
+    
 14. Add the Expired option
 
     -   Click **Add**.
@@ -586,39 +553,39 @@ Task #1: Create Relationships
 
 4.  Create Permit to Contact relationship
 
-- Click to open the **Permit** entity.
+    - Click to open the **Permit** entity.
 
-- Select the **Relationships** tab.
+    - Select the **Relationships** tab.
 
-- Click **Add Relationship** and select **Many-to-one**.
+    - Click **Add Relationship** and select **Many-to-one**.
 
-- Select Contact for **Related (One)** and click **Done**.
+    - Select Contact for **Related (One)** and click **Done**.
 
 5. Create Permit to Inspection relationship
 
-- Click **Add Relationship** and select **One-to-Many**.
+    - Click **Add Relationship** and select **One-to-Many**.
 
-- Select **Inspection** for **Entity** in the **Related (Many)** and click
+    - Select **Inspection** for **Entity** in the **Related (Many)** and click
     **Advanced Options**.
 
-- Change the **Type of Behavior** to **Parental** and click **Done**.
+    - Change the **Type of Behavior** to **Parental** and click **Done**.
 
 6. Create Permit to Build Site relationship
 
-- Click **Add Relationship** and select **Many-to-One**.
+    - Click **Add Relationship** and select **Many-to-One**.
 
-- Select **Build Site** for **Related (One) Entity** and click **Advanced
+    - Select **Build Site** for **Related (One) Entity** and click **Advanced
     Options**.
 
-- Change the **Delete** to **Restrict** and click **Done**.
+    - Change the **Delete** to **Restrict** and click **Done**.
 
 7. Create Permit to Permit Type relationship
 
-- Click **Add Relationship** and select **Many-to-One**.
+    - Click **Add Relationship** and select **Many-to-One**.
 
-- Select **Permit Type** for **Related (One) Entity** and click **Done**.
+    - Select **Permit Type** for **Related (One) Entity** and click **Done**.
 
-- Click **Save Entity**.
+    - Click **Save Entity**.
 
-- Select **Solutions** from the top menu and click **Publish All
+    - Select **Solutions** from the top menu and click **Publish All
     Customizations.**
