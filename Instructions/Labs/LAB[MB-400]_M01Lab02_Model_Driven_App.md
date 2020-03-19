@@ -123,8 +123,7 @@ Task \#1: Edit Permit Form and View
 24. To edit the Active Permits view, select the **Views** tab and click to open
     the **Active Permits** view.
 
-25. Drag the **Build Site** field and drop it between the **Name** and **Created
-    On** fields.
+25. Drag the **Build Site** field and drop it between the **Name** and **Create On** fields.
 
 26. Click on the **Permit Type** field. The Permit Type field will be added to
     the view.
@@ -155,33 +154,33 @@ Task \#2: Edit Build Site Form and View
 
 4.  Edit the Build Site entity form.
 
-- Click to open the **Build Site** entity.
+    - Click to open the **Build Site** entity.
 
-- Select the **Forms** tab and click to open the **Main** form.
+    - Select the **Forms** tab and click to open the **Main** form.
 
-- Add **City**, **State/Province**, **Zip/Postal Code**, and **Country
+    - Add **City**, **State/Province**, **Zip/Postal Code**, and **Country
     Region** fields to the form between **Street Address** and **Owner**.
 
--  Click **Save** and wait until the changes are saved.
+    -  Click **Save** and wait until the changes are saved.
 
--  Click **Publish** and wait for the publishing to complete.
+    -  Click **Publish** and wait for the publishing to complete.
 
-- Click on the back button in the browser.
+    - Click on the back button in the browser.
 
 5. Edit the Active Build Sites view.
 
-- Select the **Views** tab and click to open the **Active Build Sites** view.
+    - Select the **Views** tab and click to open the **Active Build Sites** view.
 
-- Add **City** and **Zip/Postal Code** to the view.
+    - Add **City** and **Zip/Postal Code** to the view.
 
-- Remove **Created On** from the view by selecting **Remove** from the options
+    - Remove **Created On** from the view by selecting **Remove** from the options
     in field Chevron.
 
-- Click **Save** and wait until the changes are saved.
+    - Click **Save** and wait until the changes are saved.
 
-- Click **Publish** and wait for the publishing to complete.
+    - Click **Publish** and wait for the publishing to complete.
 
-- Click on the browser back button.
+    - Click on the browser back button.
 
 Task \#3: Edit Inspection Form and View
 ---------------------------------------
@@ -260,7 +259,7 @@ Task \#3: Edit Inspection Form and View
 Task \#4: Edit Permit Type Form
 -------------------------------
 
-1.  If you are not in the Inspections window, sign in to <https://make.powerapps.com>.
+1.  If you are not in the Inspections window from the last task, sign in to <https://make.powerapps.com>.
 
 2.  Select your **Dev environment** or confirm that you are currently in your Dev environment.
 
@@ -322,7 +321,7 @@ Task \#1: Create Application
 
 2.  Create the Model-Driven Application
 
-    -   Click **New** and select **App** and then **Model-Drive App**. This will open a new tab.
+    -   Click **New** and select **App** and then **Model-Driven App**. This will open a new tab.
 
     -   Enter **Permit Management** for Name and click **Done**.
 
